@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import Home from './Screen/home';
+import EditPolicy from './Screen/updatePolicy'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Switch>
+    <Route exact path='/' component={Home}></Route>
+    <Route exact path='/edit/:id' component={EditPolicy}></Route>
+  </Switch>
+  </Router>
   );
 }
 
